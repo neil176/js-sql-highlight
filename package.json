@@ -1,10 +1,10 @@
 {
-  "name": "es6-string-html",
-  "displayName": "es6-string-html",
-  "description": "Syntax highlighting in es6 multiline strings",
+  "name": "js-sql-highlight",
+  "displayName": "js-sql-highlight",
+  "description": "Syntax highlighting for SQL in JS strings",
   "version": "1.0.0",
   "publisher": "neil176",
-  "icon": "docs/logo.png",
+  "icon": "",
   "engines": {
     "vscode": "^1.19.0"
   },
@@ -13,68 +13,21 @@
     "theme": "light"
   },
   "repository": {
-    "url": "https://github.com/mydesireiscoma/es6-string-html"
+    "url": "https://github.com/neil176/js-sql-highlight"
   },
   "bugs": {
-    "url": "https://github.com/mydesireiscoma/es6-string-html/issues"
+    "url": "https://github.com/neil176/js-sql-highlight/issues"
   },
-  "main": "./scripts/main",
   "categories": [
     "Programming Languages"
   ],
   "keywords": [
     "javascript",
-    "es6",
-    "es6-string-html",
-    "html",
     "sql"
   ],
-  "activationEvents": [
-    "onCommand:es6stringhtml.insertComment",
-    "onCommand:es6stringhtml.insertTemplate"
-  ],
+  "activationEvents": [],
   "contributes": {
-    "commands": [
-      {
-        "command": "es6stringhtml.insertComment",
-        "title": "Insert es6-string-html comment",
-        "category": "HTML"
-      },
-      {
-        "command": "es6stringhtml.insertTemplate",
-        "title": "Insert es6-string-html template",
-        "category": "HTML"
-      }
-    ],
     "grammars": [
-      {
-        "injectTo": [
-          "inline.es6-html"
-        ],
-        "scopeName": "inline.es6-js-injection",
-        "path": "./syntaxes/es6-js-injection.json",
-        "embeddedLanguages": {
-          "meta.template.expression.ts": "typescript",
-          "meta.template.expression.js": "javascript",
-          "meta.embedded.block.html": "html"
-        }
-      },
-      {
-        "injectTo": [
-          "source.html",
-          "source.js",
-          "source.js.jsx",
-          "source.jsx",
-          "source.ts",
-          "source.tsx",
-          "text.html"
-        ],
-        "scopeName": "inline.es6-html",
-        "path": "./syntaxes/es6-inline-html.json",
-        "embeddedLanguages": {
-          "meta.embedded.block.html": "html"
-        }
-      },
       {
         "injectTo": [
           "source.html",
@@ -85,8 +38,8 @@
           "source.tsx",
           "source.sql"
         ],
-        "scopeName": "inline.es6-sql",
-        "path": "./syntaxes/es6-inline-sql.json",
+        "scopeName": "inline.js-sql",
+        "path": "./js-inline-sql.json",
         "embeddedLanguages": {
           "meta.embedded.sql": "sql"
         }

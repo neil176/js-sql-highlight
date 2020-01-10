@@ -1,10 +1,5 @@
 {
-  "fileTypes": [
-    "js",
-    "jsx",
-    "ts",
-    "tsx"
-  ],
+  "fileTypes": ["js", "jsx", "ts", "tsx"],
   "injectionSelector": "L:source.js -comment -string, L:source.jsx -comment -string,  L:source.js.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string",
   "injections": {
     "L:source": {
@@ -95,5 +90,5 @@
       ]
     }
   ],
-  "scopeName": "inline.es6-sql"
+  "scopeName": "inline.js-sql"
 }
