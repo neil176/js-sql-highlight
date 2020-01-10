@@ -2,8 +2,8 @@
   "name": "es6-string-html",
   "displayName": "es6-string-html",
   "description": "Syntax highlighting in es6 multiline strings",
-  "version": "2.0.0",
-  "publisher": "Tobermory",
+  "version": "1.0.0",
+  "publisher": "neil176",
   "icon": "docs/logo.png",
   "engines": {
     "vscode": "^1.19.0"
