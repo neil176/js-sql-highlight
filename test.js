@@ -1,25 +1,20 @@
-// In the rest:
-// comma in the next line
-// object properties
-// functions
-
 // Make sure default strings are not broken
-const defaultString1 = "<div>Something</div>"
-const defaultString2 = `String`
+const defaultString2 = `--test
+String;`;
 const defaultString3 = `
   If the first line is a string, it will be intepritied as a comment
   sdfsdfdsfsdf
   asdaskjdlasjdlkasjdas
   dasdajslkdjaslkdjalskdjasd
-  asdaslkdjaksldasdasdasdas
-`
+  asdaslkdjaksldasdasdasdas;
+`;
 
 const defaultString4 = `
-  nothing to highlight
-`
+  nothing to highlight;
+`;
 
-const value = `Nothing can be here`
-const value2 = `<div>Something</div>`
+const value = `Nothing can be here;`;
+const value2 = `<div>Something</div>`;
 
 const defaultString4 = `
   asdasdas
@@ -32,82 +27,86 @@ const defaultString4 = `
   asdasdasdasdasdasda
   sdasdasdasdsadasdasdasd
   asdasdasdasdasdlkjasldjalskdjalskdjalsdjalksdjalskdj
-`
+`;
 
 // Check single-line HTML highlighting
-const singleLine = `<div>${div}Something</div>`
-const singleLineObj = {
-    prop: func(`<div attr="adasd">asdasd</div>`),
-    noHTML: `nohtml`
+const singleLine = `<div>${div}Something</div>`;
+
+function test() {
+  return true;
 }
 
-callFn(
-    "arg",
-    `<div attr="asdasd">Value</div>`
-)
-
-// Lits
-const temp = lit`
-    <div>something</div>
-`
-
-const anon = () => `<div>Value</div>`
-
-// Check multiline HTML highlighting
-const multiline = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
-    <body>
-      dasdasdasdasd
-      asdasdasd
-        Hello, world <span attr="value">Something</span>
-      asdasdas
-      <!-- asdlkasjdlas -->
-      asdasdasdasdasdasdasd
-    </body>
-    </html>
-`
+const singleLineObj = {
+  prop: test(""),
+  noHTML: `nohtml`
+};
+test(`hey`, `1`);
+callFn("arg", `<div attr="asdasd">Value</div>`);
+const test = "thing";
 
 const multilineObj = {
-    prop: `
-        <div att="adsasd"> ${ test() }</div>
-    `,
-    asd: "sadasdasd"
-}
+  prop: `
+        <div att="adsasd"> ${test("potato")}</div>
+`,
+  asd: "sadasdasd"
+};
 
 // Check functions
-const checkFn = temp(`<div attr="value">Message</div>`)
+const checkFn = temp(`<div attr="value">Message</div>`);
 
 // Misc
 function test() {
-    const result = true
-    return result
+  const result = true;
+  return result;
 }
 
-const stress1 = `asdasdasd`
-const stress2 = `<no>asd<div attr="asdad"></div>adasd</no>`
-const stress3 = `<no> ${ test('asdasd') } </no>`
+const stress1 = `asdasdasd`;
+const stress2 = `<no>asd<div attr="asdad"></div>adasd</no>`;
+const stress3 = `<no> ${test("asdasd")} </no>`;
 
 function test() {
-    const result = (
-        true
-    )
-    return result
+  const result = true;
+  return result;
 }
 
-const testSQL = /* sql */`
+const testSQL = /* sql */ `
     -- THIS FILE SHOWS EXAMPLE SYNTAX HIGHLIGHTING
     -- FOR SQL
     INSERT INTO database.table (1, 2, 3) VALUES (1, 2, 3);
     CREATE TABLE mytable;
     DELETE FROM mytable WHERE id = 2
+`;
+
+const othrtestsql = `
+    -- THIS FILE SHOWS EXAMPLE SYNTAX HIGHLIGHTING
+    -- FOR SQL
+    INSERT INTO database.table (1, 2, 3) VALUES (1, 2, 3);
+    CREATE TABLE mytable;
+    DELETE FROM mytable WHERE id = 2
+`;
+
+const mything = {
+  sql: `
+    SELECT
+    potato
+    FROM
+    mytable
+    WHERE id IN (1, 2, 3);ß
 `
+};
+
+const sql = `
+  INSERT INTO test
+    thing, otherthing
+  VALUES
+    ('test', 2);
+    limit ${thing}
+    $2
+`;
+
+function imapickle(test = `hey`) {
+  return Boolean(test);
+}
 
 /*
         {

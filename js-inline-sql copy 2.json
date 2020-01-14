@@ -1,17 +1,21 @@
 {
-  "injectionSelector": "L:source.js",
+  "fileTypes": ["js", "ts"],
+  "injectionSelector": "L:source.js -comment -string, L:source.ts -comment -string",
   "patterns": [
     {
-      "begin": "(sql\\s?)(=?)(\\s?)(`)",
+      "begin": "(sql\\s?)(:?)(=?)(\\s)(`)",
       "beginCaptures": {
-        "0": {
+        "1": {
           "name": "variable.other.readwrite.js"
         },
-        "1": {
+        "2": {
+          "name": "punctuation.separator.key-value.js"
+        },
+        "3": {
           "name": "keyword.operator.assignment.js"
         }
       },
-      "end": "(`)(;?)",
+      "end": "(`)(;?,?)",
       "patterns": [
         {
           "include": "source.ts#template-substitution-element"
@@ -21,13 +25,14 @@
         }
       ]
     },
+
     {
-      "begin": "(sql\\s?)(:?)(\\s?)(`)",
+      "begin": "(sql)(:)(\\s)(`)",
       "beginCaptures": {
-        "0": {
-          "name": "constant.other.object.key.js"
-        },
         "1": {
+          "name": "variable.other.readwrite.js"
+        },
+        "2": {
           "name": "punctuation.separator.key-value.js"
         }
       },
@@ -41,6 +46,7 @@
         }
       ]
     },
+
     {
       "begin": "(\"?'?\\${)",
       "end": "(}\"?'?)",

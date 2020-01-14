@@ -25,23 +25,18 @@
     "javascript",
     "sql"
   ],
-  "activationEvents": [],
   "contributes": {
     "grammars": [
       {
         "injectTo": [
-          "source.html",
           "source.js",
-          "source.js.jsx",
-          "source.jsx",
           "source.ts",
-          "source.tsx",
           "source.sql"
         ],
-        "scopeName": "inline.js-sql",
+        "scopeName": "sql-string.injection",
         "path": "./js-inline-sql.json",
         "embeddedLanguages": {
-          "meta.embedded.sql": "sql"
+          "meta.embedded.*": "sql"
         }
       }
     ]
