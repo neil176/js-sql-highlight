@@ -3,10 +3,9 @@
   "displayName": "js-sql-highlight",
   "description": "Syntax highlighting for SQL in JS strings",
   "version": "1.0.0",
-  "publisher": "neil176",
   "icon": "",
   "engines": {
-    "vscode": "^1.19.0"
+    "vscode": "^1.41.0"
   },
   "galleryBanner": {
     "color": "#dedede",
