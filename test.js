@@ -1,3 +1,13 @@
+// Highlight the string value for any var 'sql'
+// While still highlighting interpolation correctly
+const sql = `
+  INSERT INTO test
+    thing, otherthing, otherother
+  VALUES
+    ('test', 2, '${String(true) + "inside an interpolated value"}');
+    $2
+`;
+
 // Highlight the string value for any key 'sql'
 const mything = {
   sql: `
@@ -8,16 +18,6 @@ const mything = {
     WHERE id IN (1, 2, 3);
   `
 };
-
-// Highlight the string value for any var 'sql'
-// While still highlighting interpolation correctly
-const sql = `
-  INSERT INTO test
-    thing, otherthing, otherother
-  VALUES
-    ('test', 2, '${String(true) + "inside an interpolated value"}');
-    $2
-`;
 
 // Should not care about being multiline
 function newScopeForMoreSql() {

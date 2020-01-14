@@ -2,12 +2,12 @@
   "injectionSelector": "L:source.js",
   "patterns": [
     {
-      "begin": "(sql\\s?)(=?)(\\s?)(`)",
+      "begin": "(sql)\\s?(=?)(\\s?)(`)",
       "beginCaptures": {
-        "0": {
+        "1": {
           "name": "variable.other.readwrite.js"
         },
-        "1": {
+        "2": {
           "name": "keyword.operator.assignment.js"
         }
       },
@@ -24,10 +24,10 @@
     {
       "begin": "(sql\\s?)(:?)(\\s?)(`)",
       "beginCaptures": {
-        "0": {
-          "name": "constant.other.object.key.js"
-        },
         "1": {
+          "name": "meta.object-literal.key.js"
+        },
+        "2": {
           "name": "punctuation.separator.key-value.js"
         }
       },
@@ -43,12 +43,12 @@
     },
     {
       "begin": "(\"?'?\\${)",
-      "end": "(}\"?'?)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
         }
       },
+      "end": "(}\"?'?)",
       "endCaptures": {
         "1": {
           "name": "entity.name.tag"
